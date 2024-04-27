@@ -1,8 +1,10 @@
+import { Toaster } from 'react-hot-toast'
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import ArticleForm from './components/ArticleForm'
+import { Navigation } from './components/Navigation'
 import ProtectedRoute from "./components/ProtectedRoute"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
-import NotFound from "./pages/NotFound"
 import Register from "./pages/Register"
 
 
@@ -18,22 +20,36 @@ function RegisterAndLogout() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/register" element={<RegisterAndLogout />} />
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div className='bg-slate-800 h-dvh'>
+      <BrowserRouter>
+        <div className='container mx-auto'>
+          <Navigation />
+          <Routes>
+            <Route
+              path="/home"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/register" element={<RegisterAndLogout />} />
+            <Route path="/articles/create" element={
+              <ProtectedRoute>
+                <ArticleForm />
+              </ProtectedRoute>
+            } />
+            {/* <Route path="*" element={<NotFound />} /> */}
+            <Route path="*" element={<Navigate to="/home" />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+          </Routes>
+          <Toaster />
+        </div>
+      </BrowserRouter>
+    </div>
+
   )
 }
 

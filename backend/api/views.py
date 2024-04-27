@@ -37,3 +37,15 @@ class ArticleDelete(generics.DestroyAPIView):
     def get_queryset(self):
         user = self.request.user
         return Article.objects.filter(author=user)
+
+
+class ArticleDetail(generics.RetrieveAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class ArticleUpdate(generics.UpdateAPIView):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+    permission_classes = [IsAuthenticated]

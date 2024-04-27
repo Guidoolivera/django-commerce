@@ -1,35 +1,48 @@
-.note-container {
+.article-container {
     padding: 10px;
     margin: 20px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex: auto;
+
 }
 
-.note-title {
-    color: #333;
+.article-title {
+    font-size: 24px;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    text-decoration: none;
+    /* Elimina el subrayado del enlace */
+
+
 }
 
-.note-content {
-    color: #666;
+
+.article-title:hover {
+    color: rgb(106, 0, 0);
 }
 
-.note-date {
+.article-title a:hover {
+    color: blue;
+
+}
+
+.article-description,
+.article-location,
+.article-price {
+    color: #000000;
+}
+
+
+.article-category {
+    color: rgb(100, 100, 100);
+}
+
+
+.article-date {
     color: #999;
     font-size: 0.8rem;
-}
-
-.delete-button {
-    background-color: #f44336;
-    /* Red */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.delete-button:hover {
-    background-color: #d32f2f;
-    /* Darker red */
+    text-align: center;
 }
