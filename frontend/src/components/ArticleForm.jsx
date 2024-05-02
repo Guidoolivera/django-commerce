@@ -78,7 +78,7 @@ function ArticleForm({ }) {
 
 
     return (
-        <div className='max-w-xl mx-auto h-dvh'>
+        <div className='max-w-xl mx-auto h-100%'>
             <h2 className='text-center text-3xl font-bold text-cyan-700 mb-5'>Crear publicación</h2>
             <form onSubmit={createArticle} encType="multipart/form-data">
                 <label htmlFor="title">Título:</label>

@@ -11,7 +11,7 @@ function Article({ article, onDelete }) {
     const navigate = useNavigate();
 
     return (
-        <div className="bg-zinc-200  p-3 hover:bg-zinc-700 hover:cursor-pointer mt-5 rounded-lg my-10 " onClick={() => {
+        <div className="bg-zinc-200  p-3 hover:bg-zinc-300 hover:cursor-pointer mt-5 rounded-lg my-10 " onClick={() => {
             navigate(`/articles/${article.id}`)
         }}>
             {/* Enlace al detalle del artículo */}
@@ -20,7 +20,7 @@ function Article({ article, onDelete }) {
             <p className='text-slate-700'>Precio: {<strong>${article.price}</strong>}</p>
             <p className='text-slate-700'>{article.location}</p>
             <p className='text-slate-400 mt-5'>{article.category}</p>
-            <div className='box-border h-100 w-100 p-4 border-4'>
+            <div className='box-border h-100 w-100 p-4'>
                 {article.image ? (
                     <img src={article.image} alt="Article" />
                 ) : (

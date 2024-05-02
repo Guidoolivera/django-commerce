@@ -1,11 +1,12 @@
-import { Toaster } from 'react-hot-toast'
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
-import ArticleForm from './components/ArticleForm'
-import { Navigation } from './components/Navigation'
-import ProtectedRoute from "./components/ProtectedRoute"
-import Home from "./pages/Home"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
+import { Toaster } from 'react-hot-toast';
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import ArticleForm from './components/ArticleForm';
+import { Footer } from './components/Footer';
+import { Navigation } from './components/Navigation';
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 
 function Logout() {
@@ -20,9 +21,9 @@ function RegisterAndLogout() {
 
 function App() {
   return (
-    <div className='bg-slate-800 h-dvh'>
+    <div className='bg-slate-800 h-screen'>
       <BrowserRouter>
-        <div className='container mx-auto'>
+        <div className='container mx-auto '>
           <Navigation />
           <Routes>
             <Route
@@ -43,11 +44,14 @@ function App() {
             } />
             {/* <Route path="*" element={<NotFound />} /> */}
             <Route path="*" element={<Navigate to="/home" />} />
-            <Route path="/" element={<Navigate to="/home" />} />
+            {/* <Route path="/" element={<Navigate to="/home" />} /> */}
           </Routes>
           <Toaster />
+
         </div>
+        <Footer />
       </BrowserRouter>
+
     </div>
 
   )
